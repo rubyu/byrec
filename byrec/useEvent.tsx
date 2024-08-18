@@ -118,7 +118,7 @@ function createGenericEventProvider<E extends Aggregatable, A extends Aggregated
                 setIsSyncing(false);
                 setError(err instanceof Error ? err : new Error('Failed to fetch aggregated values'));
             });
-        }, [isInitializing]);
+        }, [keys, isInitializing]);
 
         return (
             <EventContext.Provider value={{
